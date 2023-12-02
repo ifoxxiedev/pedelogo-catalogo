@@ -19,7 +19,7 @@ pipeline {
       steps {
         script {
           // Build Docker Image
-          dockerapp = docker.build("obededoreto/api-produto:${env.BUILD_ID}", '-f ./src/PedeLogo.Catalogo.Api/Dockerfile')
+          dockerapp = docker.build("obededoreto/api-produto:${env.BUILD_ID}", '-f ./src/PedeLogo.Catalogo.Api/Dockerfile .')
         }
       }
     }
