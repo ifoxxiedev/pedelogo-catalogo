@@ -38,6 +38,11 @@ pipeline {
 
     // Stage
     stage ('Deploy kubernetes') {
+      agent {
+        kubernetes {
+          cloud 'jadeerp-hml-cluster-k8s' // ref, cloud config
+        }
+      }
       environment {
         tag_version = "${env.BUILD_ID}"
       }
